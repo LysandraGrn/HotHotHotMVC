@@ -131,6 +131,9 @@ $( document ).ready(function() {
   $(this).parent('.menu').toggleClass('active');
 });
 
+$(".profil").on('click',function (){
+	document.location.href= '?url=profil';
+});
 
 $(".deco").on('click', function () {
 		$.ajax({
