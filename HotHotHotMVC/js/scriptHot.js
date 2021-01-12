@@ -132,7 +132,7 @@ $( document ).ready(function() {
 });
 
 $(".profil").on('click',function (){
-	document.location.href= '?url=profil';
+	document.location.href= '/profil';
 });
 
 $(".deco").on('click', function () {
