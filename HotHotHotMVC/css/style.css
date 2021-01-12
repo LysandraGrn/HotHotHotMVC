@@ -1,0 +1,359 @@
+body {
+  font-family: 'Comfortaa', sans-serif;
+  background: #16161d;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  overflow: hidden;
+
+}
+#fond{
+ position:fixed;
+ width:100vw;
+ height:100vh;
+ top:0;
+ left:0;
+ z-index:-1;
+}
+
+h1 {
+  font-size:60px;
+  font-family: 'Poppins', sans-serif;
+  margin: 2em 0 .2em;
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 2px 2px 1px #CCCCCC, 2px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 5px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+}
+main {
+  margin: 4em auto 8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.capteur{
+  background: linear-gradient(315deg, #FEA47F 0%, #F97F51 74%);
+  opacity:0.85;
+  flex: 0 0 300px;
+  padding: 5px;
+  margin: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0 0 10px #333;
+  text-align: center;
+  position: relative;
+  height: 200px;
+
+}
+.capteur h3{
+
+    font-size: 50px;
+    margin: 10px 0 20px 0;
+}
+.capteur .min{
+
+    font-size: 30px;
+    margin: 10px 100% 20px 0;
+}
+.min-max h4{
+
+    font-size: 30px;
+    display: inline-block !important;
+    margin: 20px;
+}
+
+#black {
+    top: 0;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    transition: z-index 500ms, visibility 800ms, opacity 1000ms;
+}
+#black.visable {
+    opacity: 1;
+    z-index: 8;
+    visibility: visible;
+}
+#popup {
+    z-index: -1;
+    opacity: 0;
+    top: -300px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+    padding: 15px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(248, 248, 248);
+    transition: top 550ms, opacity 500ms, z-index 500ms;
+}
+#popup h3,.alerte{
+    color: #333333;
+    margin-bottom: 5px;
+}
+#popup.visable {
+    top : 10%;
+    opacity: 1;
+    z-index: 9;
+}
+#popup > .title{
+  margin: 0;
+  color: rgb(57, 57, 57);
+}
+#popup > .subtitle{
+  font-size: 20px;
+  margin: 0 0 0 15px;
+  color: rgb(0, 0, 0);
+}
+#popup .close {
+    top: -10px;
+    width: 50px;
+    height: 50px;
+    right: -10px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 15px;
+    background: rgb(156, 26, 26);
+    background-size: contain;
+}
+#popup .close:hover {
+    background: rgb(220, 0, 0);
+    transition-duration: 0.3s;
+}
+#popup i{
+    color: #333333;
+}
+.menu 
+  a {
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    background: #1e272e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 24px;
+    margin: 3px;
+    padding-top: 9px;
+    transition: all .3s ease;
+    z-index: 9999;
+  
+}
+.menu {
+  position: absolute;
+  top: 15px;
+  right:  15px;
+  width: 50px;
+  height: 50px;
+  }
+  .menu .base {
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    font-size: 34px;
+    margin: 0;
+    padding-top: 6px;
+  }
+  .menu .profil {
+    z-index: 4;
+    transition-delay: .05s;
+    transform: rotate(180deg);
+  }
+  .menu .documentation {
+    z-index: 4;
+    transition-delay: .08s;
+    transform: rotate(180deg);
+  }
+  .menu .deco {
+    z-index: 3;
+    transition-delay: .1s;
+    transform: rotate(180deg);
+  }
+  
+  .active
+    .base {
+      transform: rotate(180deg);
+    }  .active
+    .profil {
+      transform: translate(-60px, 0) rotate(0);
+      transition-delay: .2s;
+    }  .active
+    .documentation {
+      transform: translate(-120px, 0) rotate(0);
+      transition-delay: .10s;
+    }  .active
+    .deco {
+      transform: translate(-180px, 0) rotate(0);
+      transition-delay: .15s;
+    }
+
+.minibar{
+    display: flex;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    bottom: 0;
+    visibility: hidden;
+    transition: visibility 500ms ease-out;
+}
+.minibar2{
+    display: flex;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    bottom: 0;
+    visibility: hidden;
+    transition: visibility 500ms ease-out;
+}
+
+.minibar__bar {
+    position: relative;
+    flex: 1;
+    margin-right: 1px;
+    background-color: #f2f2f2;
+}
+
+.minibar__bar:hover .minibar__fill {
+    background-color: #ccc;
+}
+
+.minibar__bar:hover .minibar__tooltip {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.minibar__tooltip {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 40px;
+    margin-left: -20px;
+    text-align: center;
+    background-color: #666;
+    color: #eee;
+    font-size: 15px;
+    line-height: 12px;
+    padding: 4px;
+    opacity: 0;
+    transition: transform 0.3s;
+    transform: translateY(0);
+    pointer-events: none;
+    z-index: 50;
+}
+
+.minibar--mini {
+    height: 200px;
+    width: 500px;
+}
+
+.minibar--mini .minibar__bar {
+    max-width: 50px;
+    height: 100%;
+}
+
+.minibar__fill {
+    position: absolute;
+    background-color: #aa2e3f;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.minibar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+#fond{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+    opacity: 0.9;
+
+}
+
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px 100px / 120px;
+}
+#container h1{
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button[type=submit] {
+    background-color: #182C61;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all 400ms ease-out;
+}
+button[type=submit]:hover {
+    background-color: white;
+    color: #182C61;
+    border: 1px solid #182C61;
+}
+
+@media screen and (max-width: 1000px) {
+    .capteur {
+        display:block;
+        width:60vw;
+        font-size:3rem
+    }
+    main{
+      flex-flow:column wrap;
+      align-items:center;
+    }
+    #popup{
+      height: 50vh;
+      width: 90vw;
+      font-size: 60px;
+    }
+    minibar--mini {
+      height: 30%;
+    }
+    #popup .close{
+      width: 5vh;
+      height: 5vh;
+    }
+
+}
