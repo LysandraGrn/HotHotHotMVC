@@ -22,4 +22,8 @@ catch (ControllerException $O_exception)
 $contentToDisplay = View::getBufferContent();
 
 
-View::show('gabarit', array('body' => $contentToDisplay));
+if (isset($_GET['url']) && $_GET['url']=='profil'){
+    View::show('base/profil');
+}else {
+    View::show('gabarit', array('body' => $contentToDisplay));
+}
