@@ -125,74 +125,27 @@ main {
 #popup i{
     color: #333333;
 }
-.menu 
-  a {
-    box-sizing: border-box;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    color: #fff;
-    background: #1e272e;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    font-size: 24px;
-    margin: 3px;
-    padding-top: 9px;
-    transition: all .3s ease;
-    z-index: 9999;
-  
+
+.menu{
+position:absolute;
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-between;
+align-items:center;
+width:40vw;
+top:2vh;
+left:2vw;
+left:2vw;
+font-size:18px;
 }
-.menu {
-  position: absolute;
-  top: 15px;
-  right:  15px;
-  width: 50px;
-  height: 50px;
-  }
-  .menu .base {
-    z-index: 5;
-    width: 50px;
-    height: 50px;
-    font-size: 34px;
-    margin: 0;
-    padding-top: 6px;
-  }
-  .menu .profil {
-    z-index: 4;
-    transition-delay: .05s;
-    transform: rotate(180deg);
-  }
-  .menu .documentation {
-    z-index: 4;
-    transition-delay: .08s;
-    transform: rotate(180deg);
-  }
-  .menu .deco {
-    z-index: 3;
-    transition-delay: .1s;
-    transform: rotate(180deg);
-  }
-  
-  .active
-    .base {
-      transform: rotate(180deg);
-    }  .active
-    .profil {
-      transform: translate(-60px, 0) rotate(0);
-      transition-delay: .2s;
-    }  .active
-    .documentation {
-      transform: translate(-120px, 0) rotate(0);
-      transition-delay: .10s;
-    }  .active
-    .deco {
-      transform: translate(-180px, 0) rotate(0);
-      transition-delay: .15s;
-    }
+.menu a{
+cursor:pointer;
+height:100%;
+width:fit-content;
+border-radius: 10px;
+border: solid #fff;
+padding:10px;
+}
 
 .minibar{
     display: flex;
@@ -296,41 +249,48 @@ main {
 
 }
 
-form {
-    width:100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 10px 100px / 120px;
-}
 #container h1{
     margin: 0 auto;
     padding-bottom: 10px;
 }
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+
+form{
+display: flex;
+flex-flow: column nowrap;
+align-items:center;
+justify-content:center;
+height:fit-content;
+margin: 5vh 0 10vh 0;
 }
 
-button[type=submit] {
-    background-color: #182C61;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    transition: all 400ms ease-out;
+input[type=text], input[type=password], input[type=email] {
+    border: 2px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 18px;
+    width: 215px;
+    margin-bottom:20px;
+    background:none;
 }
-button[type=submit]:hover {
-    background-color: white;
-    color: #182C61;
-    border: 1px solid #182C61;
+
+input[type=submit] {
+    border: 2px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 18px;
+    width: 215px;
+    margin-bottom:20px;
+    background:none;
+    cursor:pointer;
+    transition: all 200ms;
+}
+
+input[type=submit]:hover {
+    transform:translateY(5px);
 }
 
 @media screen and (max-width: 1000px) {

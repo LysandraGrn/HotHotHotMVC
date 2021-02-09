@@ -1,10 +1,15 @@
 <?php
 echo '<header> 
-        <h1>HOTHOTHOT</h1>
+        <h1>HOT HOT HOT</h1>
         <nav class="menu">
-            <a class="base" href="#"><i class="fas fa-bars"></i></a>
-            <a class="profil" href="profil.html"><i class="fas fa-user-circle"></i></a>
-            <a class="documentation" href="documentation.html"><i class="fa fa-book" aria-hidden="true"></i></i></a>
-            <a class="deco"><i class="fas fa-backspace"></i></a>
-        </nav>
+            <a class="navigation" data-nav=" ">Accueil</a>
+            <a class="navigation" data-nav="profil">Profil</a>
+            <a class="navigation" data-nav="documentation">Documentation</a>
+            <a class="navigation" data-nav="inscription">Inscription</a>';
+            if(isset($_SESSION['id'])){
+                echo '<a class="c navigation" data-nav="deconnexion">Deconnexion</a>';
+            }else{
+                echo '<a class="c navigation" data-nav="connexion">Connexion</a>';
+            }
+echo    '</nav>
       </header>';

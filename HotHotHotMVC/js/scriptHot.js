@@ -131,16 +131,10 @@ $( document ).ready(function() {
   $(this).parent('.menu').toggleClass('active');
 });
 
-$(".profil").on('click',function (){
-	document.location.href= '/profil';
+$(".navigation").on('click',function (){
+	document.location.href= $(this).data('nav');
 });
 
-$(".deco").on('click', function () {
-		$.ajax({
-			url: '/php/logout.php',
-			method: 'get'
-		}).done(function () {
-			window.location.href = '/login.html';
-		});
-	})
+
+
 });

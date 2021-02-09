@@ -24,6 +24,16 @@ $contentToDisplay = View::getBufferContent();
 
 if (isset($_GET['url']) && $_GET['url']=='profil'){
     View::show('base/profil');
-}else {
+}elseif (isset($_GET['url']) && $_GET['url']=='inscription'){
+    View::show('signup');
+} elseif (isset($_GET['url']) && $_GET['url']=='connexion'){
+    View::show('signin');
+} elseif (isset($_GET['url']) && $_GET['url']=='deconnexion'){
+    View::show('signout');
+}elseif (isset($_GET['url']) && $_GET['url']=='edition'){
+    View::show('editProfil');
+}elseif (isset($_GET['url']) && $_GET['url']=='documentation'){
+    View::show('base/documentation');
+} else {
     View::show('gabarit', array('body' => $contentToDisplay));
 }

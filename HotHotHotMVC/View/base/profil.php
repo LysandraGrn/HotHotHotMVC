@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
+
+if(isset($_SESSION['id'])){
+    $getid = $_SESSION['id'];
+    $requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
+    $requser->execute(array($getid));
+    $userinfo = $requser->fetch();
+}
+
+
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,9 +28,26 @@
 </head>
 <body>
 <?php View::show('base/header'); ?>
-
-<h2>Profil</h2>
-
+<div align="center">
+    <h2>
+        <?php if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']){
+                echo "Profil de ".$userinfo['pseudo'];
+            }else{
+                echo '<a class="navigation" data-nav="connexion">Connectez vous</a>';
+            }
+        ?>
+    </h2>
+    <br />
+    <?php
+    if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id']) {
+        ?>
+        <p> Mail = <?php echo $userinfo['mail'];  ?> </p>
+        <br />
+        <a class="navigation" data-nav="edition" ">Editer mon profil</a>
+        <?php
+    }
+    ?>
+</div>
 <?php View::show('base/footer'); ?>
 </body>
 

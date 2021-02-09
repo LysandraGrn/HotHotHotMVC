@@ -41,4 +41,18 @@ class Buffer
             unlink($file);
         }
     }
+
+    public function inc($file){
+        $filename = basename($file);
+        if($content = $this->readBuffer($filename)){
+            echo $content;
+            return false;
+        }
+        ob_start();
+        require $file;
+        $content = ob_get_clean();
+        $this->writeBuffer($filename, $content);
+        echo $content;
+        return false;
+    }
 }
