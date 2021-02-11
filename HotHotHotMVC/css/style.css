@@ -317,3 +317,23 @@ input[type=submit]:hover {
     }
 
 }
+
+.docpage{
+    margin-top: 50px;
+}
+
+.docpage ul li {
+    list-style: none;
+}
+
+.separator {
+    margin-bottom: 60px;
+}
+
+.separator h3 {
+    margin-top: 50px;
+}
+
+.documentation {
+    overflow: auto;
+}

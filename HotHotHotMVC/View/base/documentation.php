@@ -14,9 +14,9 @@
     <title>Documentation</title>
 
 </head>
-    <body>
+    <body class="documentation">
     <?php View::show('base/header'); ?>
-        <div align="center">
+        <section class="docpage">
             <?php $Buffer->inc('../HotHotHotMVC/View/FAQ.php'); ?>
             <?php
             //if(!$variable = $Buffer->readBuffer('variable.txt')){
@@ -27,7 +27,7 @@
 
 
             <p><?//= $variable; ?></p>
-        </div>
+        </section>
     <?php View::show('base/footer'); ?>
     </body>
 
