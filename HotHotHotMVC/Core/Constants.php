@@ -14,6 +14,8 @@ class Constants
 
     const DIRECTORY_CONTROLLER = '/Controller/';
 
+    const DIRECTORY_BUFFER = '/Buffer/';
+
 
     public static function rootDirectory() {
         return realpath(__DIR__ . '/../');
@@ -37,6 +39,10 @@ class Constants
 
     public static function directoryController() {
         return self::rootDirectory() . self::DIRECTORY_CONTROLLER;
+    }
+
+    public static function directoryBuffer() {
+        return self::rootDirectory() . self::DIRECTORY_BUFFER;
     }
 
 }
